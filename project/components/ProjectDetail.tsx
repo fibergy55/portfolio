@@ -40,7 +40,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 z-50 overflow-y-auto bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+      className="fixed inset-0 z-50 overflow-y-auto bg-gradient-to-br from-gray-50 via-gray-100 to-slate-200"
       style={{
         scrollBehavior: 'smooth'
       }}
@@ -54,21 +54,21 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
         }}
       >
         <div 
-          className="absolute top-10 left-10 w-64 h-64 bg-gray-500/20 rounded-full blur-3xl"
+          className="absolute top-10 left-10 w-64 h-64 bg-gray-300/30 rounded-full blur-3xl"
           style={{
             transform: `translateY(${scrollPosition * 200}px)`,
             transition: 'transform 0.1s linear'
           }}
         />
         <div 
-          className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-96 h-96 bg-slate-300/30 rounded-full blur-3xl"
           style={{
             transform: `translateY(${-scrollPosition * 150}px)`,
             transition: 'transform 0.1s linear'
           }}
         />
         <div 
-          className="absolute top-1/2 left-1/3 w-48 h-48 bg-gray-400/20 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/3 w-48 h-48 bg-gray-200/30 rounded-full blur-3xl"
           style={{
             transform: `translateY(${scrollPosition * 100}px)`,
             transition: 'transform 0.1s linear'
@@ -87,7 +87,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-white/30 rounded-full"
+            className="absolute w-2 h-2 bg-gray-400/40 rounded-full"
             style={{
               left: `${(i * 73) % 100}%`,
               top: `${(i * 47) % 100}%`,
@@ -103,7 +103,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="fixed top-8 right-8 z-50 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all hover:scale-110"
+        className="fixed top-8 right-8 z-50 w-12 h-12 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-white transition-all hover:scale-110 shadow-lg"
         aria-label="Close project"
         style={{
           transform: `translate(${mousePosition.x * 5}px, ${mousePosition.y * 5}px)`,
@@ -117,7 +117,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
       {/* Back Button */}
       <button
         onClick={onClose}
-        className="fixed top-8 left-8 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105"
+        className="fixed top-8 left-8 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 text-gray-900 hover:bg-white transition-all hover:scale-105 shadow-lg"
         style={{
           transform: `translate(${mousePosition.x * 5}px, ${mousePosition.y * 5}px)`,
           transition: 'transform 0.3s ease-out',
@@ -139,11 +139,11 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
             opacity: 1 - scrollPosition * 0.5
           }}
         >
-          <div className="inline-block px-4 py-2 rounded-full bg-gray-500/30 backdrop-blur-sm border border-gray-400/30 text-gray-200 mb-6">
+          <div className="inline-block px-4 py-2 rounded-full bg-gray-800/90 backdrop-blur-sm border border-gray-700 text-white mb-6">
             {project.category}
           </div>
-          <h1 className="text-white mb-6">{project.title}</h1>
-          <p className="text-white/70 max-w-3xl text-xl">{project.description}</p>
+          <h1 className="text-gray-900 mb-6">{project.title}</h1>
+          <p className="text-gray-600 max-w-3xl text-xl">{project.description}</p>
         </div>
 
         {/* Main Image */}
@@ -159,7 +159,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent" />
         </div>
 
         {/* Project Details */}
@@ -171,24 +171,24 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
               opacity: Math.max(0.3, 1 - scrollPosition * 0.3)
             }}
           >
-            <h3 className="text-white mb-4">Project Overview</h3>
-            <p className="text-white/70 mb-6">
+            <h3 className="text-gray-900 mb-4">Project Overview</h3>
+            <p className="text-gray-600 mb-6">
               This project showcases advanced techniques in {project.category.toLowerCase()}, 
               combining creative vision with technical expertise. The work demonstrates 
               a deep understanding of visual composition, color theory, and digital 
               craftsmanship.
             </p>
-            <p className="text-white/70 mb-6">
+            <p className="text-gray-600 mb-6">
               Through iterative design and experimentation, this piece evolved to capture 
               the essence of modern digital media arts while pushing the boundaries of 
               creative expression.
             </p>
             <div className="flex gap-4">
-              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-600 hover:bg-gray-700 text-white transition-all hover:scale-105">
+              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 hover:bg-gray-800 text-white transition-all hover:scale-105 shadow-lg">
                 <ExternalLink size={18} />
                 View Live
               </button>
-              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white transition-all hover:scale-105">
+              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 hover:bg-white backdrop-blur-md border border-gray-300 text-gray-900 transition-all hover:scale-105 shadow-lg">
                 <Github size={18} />
                 Source
               </button>
@@ -202,23 +202,23 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
               opacity: Math.max(0.3, 1 - scrollPosition * 0.3)
             }}
           >
-            <h3 className="text-white mb-4">Project Details</h3>
+            <h3 className="text-gray-900 mb-4">Project Details</h3>
             <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-                <div className="text-white/50 text-sm mb-1">Role</div>
-                <div className="text-white">Lead Designer & Developer</div>
+              <div className="p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm">
+                <div className="text-gray-500 text-sm mb-1">Role</div>
+                <div className="text-gray-900">Lead Designer & Developer</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-                <div className="text-white/50 text-sm mb-1">Year</div>
-                <div className="text-white">2024</div>
+              <div className="p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm">
+                <div className="text-gray-500 text-sm mb-1">Year</div>
+                <div className="text-gray-900">2024</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-                <div className="text-white/50 text-sm mb-1">Tools</div>
-                <div className="text-white">Adobe Creative Suite, Blender, Cinema 4D</div>
+              <div className="p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm">
+                <div className="text-gray-500 text-sm mb-1">Tools</div>
+                <div className="text-gray-900">Adobe Creative Suite, Blender, Cinema 4D</div>
               </div>
-              <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-                <div className="text-white/50 text-sm mb-1">Duration</div>
-                <div className="text-white">3 Months</div>
+              <div className="p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm">
+                <div className="text-gray-500 text-sm mb-1">Duration</div>
+                <div className="text-gray-900">3 Months</div>
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
             opacity: Math.min(1, scrollPosition * 3)
           }}
         >
-          <h3 className="text-white mb-6">Process & Development</h3>
+          <h3 className="text-gray-900 mb-6">Process & Development</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[1, 2, 3, 4].map((i) => (
               <div 

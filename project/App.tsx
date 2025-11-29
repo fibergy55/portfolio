@@ -172,7 +172,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-slate-200 overflow-hidden">
       {/* Parallax Background Layers */}
       <div 
         className="fixed inset-0 opacity-30"
@@ -181,14 +181,14 @@ export default function App() {
           transition: 'transform 0.3s ease-out'
         }}
       >
-        <div className="absolute top-10 left-10 w-64 h-64 bg-gray-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gray-400/20 rounded-full blur-3xl" />
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gray-300/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-slate-300/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gray-200/30 rounded-full blur-3xl" />
       </div>
 
       {/* Header */}
       <header 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-md border-b border-gray-200"
         style={{
           transform: `translate(${mousePosition.x * 5}px, ${mousePosition.y * 5}px)`,
           transition: 'transform 0.3s ease-out'
@@ -197,14 +197,14 @@ export default function App() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-gray-400/50">
+              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-gray-300">
                 <img 
                   src="https://raw.githubusercontent.com/fibergy55/portfolio/main/assets/images/avatar.png" 
                   alt="Avatar"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h1 className="text-white">Hu zhewen</h1>
+              <h1 className="text-gray-900">Hu zhewen</h1>
             </div>
           </div>
         </div>
@@ -218,9 +218,9 @@ export default function App() {
           transition: 'transform 0.3s ease-out'
         }}
       >
-        <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6">
-          <h2 className="text-white mb-3">Digital Media Artist</h2>
-          <p className="text-white/70 leading-relaxed">
+        <div className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-6 shadow-lg">
+          <h2 className="text-gray-900 mb-3">Digital Media Artist</h2>
+          <p className="text-gray-600 leading-relaxed">
             I'm a digital media arts student passionate about creating immersive visual experiences. 
             My work explores the intersection of 3D design, motion graphics, and interactive media.
           </p>
@@ -245,7 +245,7 @@ export default function App() {
           }}
         >
           <div className="absolute inset-0" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)',
             backgroundSize: '50px 50px'
           }}></div>
         </div>
@@ -261,7 +261,7 @@ export default function App() {
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-white/30 rounded-full"
+              className="absolute w-2 h-2 bg-gray-400/40 rounded-full"
               style={{
                 left: `${(i * 73) % 100}%`,
                 top: `${(i * 47) % 100}%`,
@@ -294,7 +294,7 @@ export default function App() {
         >
           <button
             onClick={handlePrev}
-            className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all hover:scale-110"
+            className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-white transition-all hover:scale-110 shadow-lg"
             aria-label="Previous project"
           >
             <ChevronLeft size={24} />
@@ -307,8 +307,8 @@ export default function App() {
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'w-8 bg-white'
-                    : 'w-2 bg-white/30 hover:bg-white/50'
+                    ? 'w-8 bg-gray-900'
+                    : 'w-2 bg-gray-400 hover:bg-gray-600'
                 }`}
                 aria-label={`Go to project ${index + 1}`}
               />
@@ -317,27 +317,13 @@ export default function App() {
 
           <button
             onClick={handleNext}
-            className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all hover:scale-110"
+            className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-white transition-all hover:scale-110 shadow-lg"
             aria-label="Next project"
           >
             <ChevronRight size={24} />
           </button>
         </div>
 
-        {/* Project Info with Parallax */}
-        <div 
-          className="fixed top-32 left-1/2 -translate-x-1/2 z-40 text-center"
-          style={{
-            transform: `translate(calc(-50% + ${mousePosition.x * -12}px), ${mousePosition.y * -12}px)`,
-            transition: 'transform 0.3s ease-out'
-          }}
-        >
-          <div className="inline-block px-4 py-2 rounded-full bg-gray-500/30 backdrop-blur-sm border border-gray-400/30 text-gray-200 mb-4">
-            {projects[currentIndex].category}
-          </div>
-          <h2 className="text-white mb-2">{projects[currentIndex].title}</h2>
-          <p className="text-white/70 max-w-md">{projects[currentIndex].description}</p>
-        </div>
       </main>
     </div>
   );
