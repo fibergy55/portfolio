@@ -40,7 +40,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 z-50 overflow-y-auto bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+      className="fixed inset-0 z-50 overflow-y-auto bg-gradient-to-br from-gray-900 via-gray-800 to-black"
       style={{
         scrollBehavior: 'smooth'
       }}
@@ -54,21 +54,21 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
         }}
       >
         <div 
-          className="absolute top-10 left-10 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-10 left-10 w-64 h-64 bg-gray-500/20 rounded-full blur-3xl"
           style={{
             transform: `translateY(${scrollPosition * 200}px)`,
             transition: 'transform 0.1s linear'
           }}
         />
         <div 
-          className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"
           style={{
             transform: `translateY(${-scrollPosition * 150}px)`,
             transition: 'transform 0.1s linear'
           }}
         />
         <div 
-          className="absolute top-1/2 left-1/3 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/3 w-48 h-48 bg-gray-400/20 rounded-full blur-3xl"
           style={{
             transform: `translateY(${scrollPosition * 100}px)`,
             transition: 'transform 0.1s linear'
@@ -139,7 +139,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
             opacity: 1 - scrollPosition * 0.5
           }}
         >
-          <div className="inline-block px-4 py-2 rounded-full bg-purple-500/30 backdrop-blur-sm border border-purple-400/30 text-purple-200 mb-6">
+          <div className="inline-block px-4 py-2 rounded-full bg-gray-500/30 backdrop-blur-sm border border-gray-400/30 text-gray-200 mb-6">
             {project.category}
           </div>
           <h1 className="text-white mb-6">{project.title}</h1>
@@ -184,7 +184,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
               creative expression.
             </p>
             <div className="flex gap-4">
-              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-purple-500 hover:bg-purple-600 text-white transition-all hover:scale-105">
+              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-600 hover:bg-gray-700 text-white transition-all hover:scale-105">
                 <ExternalLink size={18} />
                 View Live
               </button>
