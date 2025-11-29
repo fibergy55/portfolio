@@ -172,7 +172,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Parallax Background Layers */}
       <div 
         className="fixed inset-0 opacity-30"
@@ -181,9 +181,9 @@ export default function App() {
           transition: 'transform 0.3s ease-out'
         }}
       >
-        <div className="absolute top-10 left-10 w-64 h-64 bg-gray-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gray-400/20 rounded-full blur-3xl" />
+        <div className="absolute top-10 left-10 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl" />
       </div>
 
       {/* Header */}
@@ -197,7 +197,7 @@ export default function App() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-gray-400/50">
+              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-purple-400/50">
                 <img 
                   src="https://raw.githubusercontent.com/fibergy55/portfolio/main/assets/images/avatar.png" 
                   alt="Avatar"
@@ -332,7 +332,7 @@ export default function App() {
             transition: 'transform 0.3s ease-out'
           }}
         >
-          <div className="inline-block px-4 py-2 rounded-full bg-gray-500/30 backdrop-blur-sm border border-gray-400/30 text-gray-200 mb-4">
+          <div className="inline-block px-4 py-2 rounded-full bg-purple-500/30 backdrop-blur-sm border border-purple-400/30 text-purple-200 mb-4">
             {projects[currentIndex].category}
           </div>
           <h2 className="text-white mb-2">{projects[currentIndex].title}</h2>
