@@ -222,7 +222,8 @@ export default function App() {
         <div className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-3 shadow-lg">
           <h2 className="text-gray-900 mb-1">Digital Media Artist</h2>
           <p className="text-gray-600 leading-snug text-sm">
-            I'm a digital media arts student passionate about creating immersive visual experiences.
+            I'm a digital media arts student passionate about creating immersive visual experiences. 
+            My work explores the intersection of 3D design, motion graphics, and interactive media
           </p>
         </div>
       </div>

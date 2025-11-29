@@ -125,7 +125,7 @@ export function ProjectDetail({ project, onClose, mousePosition }: ProjectDetail
         }}
       >
         <ArrowLeft size={20} />
-        <span>Back to Portfolio</span>
+        <span>Back to Home</span>
       </button>
 
       {/* Content */}
